@@ -1,0 +1,41 @@
+{
+  "name": "Habit Tracker Pro - Portfolio-Grade Habit Tracker",
+  "short_name": "Habit Tracker",
+  "description": "A refined, distraction-free habit tracker with intelligent streaks, analytics, and gamification.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f172a",
+  "theme_color": "#10b981",
+  "categories": ["productivity", "lifestyle", "health"],
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add Habit",
+      "short_name": "New Habit",
+      "description": "Create a new habit to track",
+      "url": "./index.html#/habits?action=new",
+      "icons": [{ "src": "assets/icons/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Today's Dashboard",
+      "short_name": "Dashboard",
+      "description": "View today's progress and active habits",
+      "url": "./index.html#/dashboard",
+      "icons": [{ "src": "assets/icons/icon-192.svg", "sizes": "192x192" }]
+    }
+  ]
+}
