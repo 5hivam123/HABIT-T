@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#059669" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#0f172a"/>
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#grad)" filter="url(#shadow)"/>
+  <!-- Flow lines & Checkmark mark -->
+  <path d="M160 266 L224 330 L360 190" fill="none" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Streak Flame accent -->
+  <path d="M352 140 C340 180 370 200 350 240 C380 200 390 160 352 140 Z" fill="#fef08a" opacity="0.9"/>
+  <!-- Ring orbit dots -->
+  <circle cx="160" cy="180" r="14" fill="#ffffff" opacity="0.8"/>
+  <circle cx="360" cy="340" r="14" fill="#ffffff" opacity="0.8"/>
+</svg>

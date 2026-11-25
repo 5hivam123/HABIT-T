@@ -1,0 +1,187 @@
+/**
+ * HabitFlow Pro - Responsive Styling
+ * Mobile-first rules, breakpoints, safe-area insets, and bottom-sheet modals.
+ */
+
+/* ==========================================================================
+   Tablet & Mobile Breakpoints (<= 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px !important;
+    z-index: var(--z-drawer);
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar.collapsed {
+    width: 280px !important;
+  }
+
+  .sidebar.collapsed .brand-text,
+  .sidebar.collapsed .nav-text,
+  .sidebar.collapsed .nav-badge,
+  .sidebar.collapsed .sidebar-footer-text,
+  .sidebar.collapsed .user-xp-details {
+    display: flex !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .btn-sidebar-toggle {
+    display: none;
+  }
+
+  .page-container {
+    padding: var(--space-4);
+    padding-bottom: calc(var(--bottom-bar-height) + var(--space-8));
+  }
+
+  .mobile-bottom-nav {
+    display: block;
+  }
+
+  .topbar {
+    padding: 0 var(--space-4);
+  }
+
+  .btn-command-palette-trigger .kbd-shortcut {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Mobile Phones (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .topbar-title {
+    font-size: var(--font-size-base);
+  }
+
+  .btn-quick-add span {
+    display: none;
+  }
+
+  .btn-quick-add {
+    padding: var(--space-2);
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+  }
+
+  .btn-command-palette-trigger span {
+    display: none;
+  }
+
+  .stat-cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .stat-card {
+    padding: var(--space-3);
+  }
+
+  .stat-card-value {
+    font-size: var(--font-size-lg);
+  }
+
+  .greeting-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-grid {
+    gap: 3px;
+  }
+
+  .calendar-day-cell {
+    padding: 2px;
+  }
+
+  .calendar-day-number {
+    font-size: var(--font-size-xs);
+  }
+
+  /* Modal becomes Bottom Sheet */
+  .modal-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal-dialog {
+    max-width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+    max-height: 85vh;
+    transform: translateY(100%);
+  }
+
+  .modal-backdrop.open .modal-dialog {
+    transform: translateY(0);
+  }
+
+  .day-details-panel {
+    width: 100%;
+  }
+
+  .toast-container {
+    bottom: calc(var(--bottom-bar-height) + var(--space-3));
+    right: var(--space-3);
+    left: var(--space-3);
+    max-width: none;
+  }
+}
+
+/* ==========================================================================
+   Small Mobile Phones (<= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .stat-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .emoji-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .habits-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    min-height: 44px; /* Ensure 44px touch targets */
+  }
+}
+
+/* Safe area insets for iPhone / Android notch */
+@supports (padding: env(safe-area-inset-top)) {
+  .topbar {
+    padding-top: env(safe-area-inset-top);
+    height: calc(var(--topbar-height) + env(safe-area-inset-top));
+  }
+
+  .mobile-bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom);
+    height: calc(var(--bottom-bar-height) + env(safe-area-inset-bottom));
+  }
+}
